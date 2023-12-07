@@ -87,7 +87,7 @@ function App() {
   return (
     <div className="bg-slate-900 bg-[url('../public/bgimage4.jpg')] dark:bg-[url('../public/bgimage5.jpg')] bg-cover w-full h-full left-0 top-0 bg-center absolute bg-no-repeat duration-100">
     <div className="font-nova w-full h-screen">
-      <div className='fixed top-5 right-10 duration-100 dark:bg-slate-700 bg-gray-100 rounded'>
+      <div className='sm:fixed absolute bottom-3 right-5 sm:bottom-auto sm:top-5 sm:right-10 duration-100 dark:bg-slate-700 bg-gray-100 rounded'>
         {
           options?.map(opt => (
             <button 
@@ -109,15 +109,15 @@ function App() {
         onKeyDown={searchLocation}/>
       </div>
       {er && <div className='flex flex-col items-center justify-center space-y-3'>
-        <span className='text-xl sm:text-5xl text-purple-700'>Did you type that correctly?</span>
-        <span className='text-sm sm:text-2xl'>Make sure you are searching for a valid place!</span>
+        <span className='text-xl sm:text-5xl text-purple-700 dark:text-amber-500'>Did you type that correctly?</span>
+        <span className='text-sm sm:text-2xl dark:text-white'>Make sure you are searching for a valid place!</span>
       </div>}
       {!data.main && !er && <div className='flex justify-center items-center flex-col p-5 space-y-3'>
         <span className='text-4xl sm:text-5xl text-violet-700 dark:text-cyan-600 duration-100'>Weather App</span>
         <span className='text-md dark:text-slate-300 duration-100'>Search for any place above!</span>
       </div>}
       {data.main && !er && <div className='-space-y-36'>
-      <div className='placeandtemp flex flex-col justify-center items-center space-y-3 text-amber-900 font-bold'>
+      <div className='placeandtemp flex flex-col justify-center items-center space-y-3 text-amber-900 dark:text-yellow-600 font-bold'>
         <span className='text-4xl mt-50'>{data.name}</span>
         <span className='text-2xl'>{data.main.temp}&deg; C</span>
         <span className='text-md'>Feels like {data.main.feels_like}&deg; C</span>
@@ -135,7 +135,7 @@ function App() {
         </div>
       </div>
       <div className='float-right flex flex-col justify-end items-end space-y-16 w-auto'>
-        <span className='-rotate-90 text-cyan-500 float-right -mr-10'>Wind: {data.wind.speed} mph</span>
+        <span className='-rotate-90 text-cyan-500 dark:text-green-400 float-right -mr-7 sm:-mr-10'>Wind: {data.wind.speed} mph</span>
         <img className='-rotate-90 sm:pr-2 float-right mr-1' width="48" height="48" src="https://img.icons8.com/fluency/48/wind.png" alt="wind"/>
       </div>
       </div>}
